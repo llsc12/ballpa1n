@@ -11,6 +11,7 @@
 		57B7B68328F8B54C00CC4DFE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7B68228F8B54C00CC4DFE /* ContentView.swift */; };
 		57B7B68528F8B54E00CC4DFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57B7B68428F8B54E00CC4DFE /* Assets.xcassets */; };
 		57B7B68828F8B54E00CC4DFE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57B7B68728F8B54E00CC4DFE /* Preview Assets.xcassets */; };
+		57B7B69028F8B5E200CC4DFE /* Windows7Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7B68F28F8B5E200CC4DFE /* Windows7Bar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		57B7B68228F8B54C00CC4DFE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		57B7B68428F8B54E00CC4DFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57B7B68728F8B54E00CC4DFE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		57B7B68F28F8B5E200CC4DFE /* Windows7Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Windows7Bar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				57B7B68028F8B54C00CC4DFE /* crapra1nApp.swift */,
 				57B7B68228F8B54C00CC4DFE /* ContentView.swift */,
+				57B7B68E28F8B59000CC4DFE /* UI */,
 				57B7B68428F8B54E00CC4DFE /* Assets.xcassets */,
 				57B7B68628F8B54E00CC4DFE /* Preview Content */,
 			);
@@ -65,6 +68,14 @@
 				57B7B68728F8B54E00CC4DFE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		57B7B68E28F8B59000CC4DFE /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				57B7B68F28F8B5E200CC4DFE /* Windows7Bar.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +150,7 @@
 			files = (
 				57B7B68328F8B54C00CC4DFE /* ContentView.swift in Sources */,
 				57B7B68128F8B54C00CC4DFE /* crapra1nApp.swift in Sources */,
+				57B7B69028F8B5E200CC4DFE /* Windows7Bar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
