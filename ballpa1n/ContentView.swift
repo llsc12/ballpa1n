@@ -91,7 +91,7 @@ struct ContentView: View {
         .flipped()
     }
     
-    @ViewBuilder func Line(_ str: String) -> some View { HStack { Text(str).monospaced(); Spacer() } }
+    @ViewBuilder func Line(_ str: String) -> some View { HStack { Text(str).font(.body.monospaced()); Spacer() } }
     
     @ViewBuilder
     var controls: some View {
@@ -104,8 +104,7 @@ struct ContentView: View {
                 }
             } label: {
                 Text(currentStage == 0 ? "Jailbreak" : finished ? "Respring" : "Jailbreaking")
-                    .font(.title3)
-                    .monospaced()
+                    .font(.title3.monospaced())
                     .foregroundColor(.white)
                     .padding()
                     .background {
