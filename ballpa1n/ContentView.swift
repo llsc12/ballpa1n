@@ -12,6 +12,7 @@ struct ContentView: View {
     @Binding var triggerRespring: Bool
     
     @State var currentStage: Int = 0
+    @State var finished = false
     
     @ObservedObject var c = Console.shared
     
@@ -20,6 +21,8 @@ struct ContentView: View {
             title
             
             statusbar
+            
+            console
             
             controls
             
@@ -41,7 +44,8 @@ struct ContentView: View {
                 Spacer()
             }
         }
-        .padding(4)
+        .padding(.vertical, 4)
+        .padding(.horizontal)
     }
     
     @ViewBuilder
@@ -58,27 +62,44 @@ struct ContentView: View {
                 .opacity(currentStage != 0 ? 1 : 0)
                 .animation(.spring(), value: currentStage)
         }
-        .padding(4)
+        .padding(.vertical, 4)
+        .padding(.horizontal)
     }
     
     @ViewBuilder
     var console: some View {
         let deviceHeight = UIScreen.main.bounds.height
-        VStack {
-            
+        ScrollView {
+            VStack(alignment: .leading) {
+                ForEach(0..<c.lines.count, id: \.self) { i in
+                    let item = c.lines[i]
+                    
+                    Line(item)
+                }
+            }
+            .frame(maxWidth: .infinity)
+            .padding(4)
+            .flipped()
         }
-        .frame(height: currentStage != 0 ? (deviceHeight / 4) * 2.5 : 0)
+        .frame(height: currentStage != 0 ? deviceHeight / 4 : 0)
+        .background {
+            RoundedRectangle(cornerRadius: 15, style: .continuous)
+                .foregroundColor(Color("ConsoleBG"))
+        }
         .opacity(currentStage != 0 ? 1 : 0)
+        .padding(.horizontal)
+        .flipped()
     }
+    
+    @ViewBuilder func Line(_ str: String) -> some View { HStack { Text(str).monospaced(); Spacer() } }
     
     @ViewBuilder
     var controls: some View {
         VStack {
             Button {
-//                currentStage = 1
-                respring()
+                beginJB()
             } label: {
-                Text("Jailbreak")
+                Text(currentStage == 0 ? "Jailbreak" : "Jailbreaking")
                     .font(.title3)
                     .monospaced()
                     .foregroundColor(.white)
@@ -89,6 +110,7 @@ struct ContentView: View {
                     }
             }
             .buttonStyle(.plain)
+            .disabled(currentStage != 0)
             .padding()
         }
     }
@@ -101,6 +123,37 @@ struct ContentView: View {
             .multilineTextAlignment(.center)
     }
     
+    func beginJB() {
+        // cool system to iterate through jbSteps array
+        
+        Task {
+            withAnimation(.spring()) { currentStage+=1 }
+            let max = (jbSteps.count - 1)
+            
+            for step in jbSteps {
+                var waitTime: Double = Double(step.avgInterval) + Double.random(in: -0.2...1)
+                if waitTime < 0 { waitTime = 0 }
+                
+                for logItem in step.consoleLogs {
+                    var logWait: Double = Double(logItem.delay) + Double.random(in: -0.1...0.8)
+                    if logWait < 0 { logWait = 0 }
+                    await wait(logWait)
+                    
+                    Console.shared.lines.append(logItem.line)
+                }
+                
+                await wait(waitTime)
+                
+                withAnimation(.spring()) {
+                    if currentStage != max {
+                        currentStage+=1
+                    } else {
+                        finished = true
+                    }
+                }
+            }
+        }
+    }
     
     func respring() {
         withAnimation(.easeInOut) {
@@ -120,9 +173,28 @@ class Console: ObservableObject {
     }
 }
 
+func wait(_ time: Double) async {
+    await withCheckedContinuation { continuation in
+        DispatchQueue.main.asyncAfter(deadline: .now() + time, execute: {
+            continuation.resume()
+        })
+    }
+}
+
 let jbSteps: [StageStep] = [
     StageStep(status: "Ready to jailbreak", avgInterval: 0, consoleLogs: []),
-//    StageStep(status: <#T##String#>, avgInterval: <#T##Float#>, consoleLogs: <#T##[ConsoleStep]#>)
+    StageStep(status: "Ensuring resources", avgInterval: 0.8, consoleLogs: [
+        ConsoleStep(delay: 0.2, line: "[*] Ensuring resources"),
+        ConsoleStep(delay: 0.7, line: "[+] Ensured resources"),
+    ]),
+    StageStep(status: "Ensuring resources2", avgInterval: 1, consoleLogs: [
+        ConsoleStep(delay: 0.2, line: "[*] Ensuring resources"),
+        ConsoleStep(delay: 0.7, line: "[+] Ensured resources"),
+    ]),
+    StageStep(status: "Ensuring resources3", avgInterval: 1, consoleLogs: [
+        ConsoleStep(delay: 0.2, line: "[*] Ensuring resources"),
+        ConsoleStep(delay: 0.7, line: "[+] Ensured resources"),
+    ]),
 ]
 
 struct StageStep {
@@ -141,5 +213,19 @@ struct PreviewIos: PreviewProvider {
     static var previews: some View {
         ContentView(triggerRespring: .constant(false))
             .preferredColorScheme(.dark)
+    }
+}
+
+
+struct FlipView: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .rotationEffect(.degrees(180))
+    }
+}
+
+extension View {
+    func flipped() -> some View {
+        modifier(FlipView())
     }
 }
