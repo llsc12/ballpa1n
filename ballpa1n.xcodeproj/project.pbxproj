@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		57B7B68128F8B54C00CC4DFE /* crapra1nApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7B68028F8B54C00CC4DFE /* crapra1nApp.swift */; };
+		57B7B68128F8B54C00CC4DFE /* ballpa1n.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7B68028F8B54C00CC4DFE /* ballpa1n.swift */; };
 		57B7B68328F8B54C00CC4DFE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7B68228F8B54C00CC4DFE /* ContentView.swift */; };
 		57B7B68528F8B54E00CC4DFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57B7B68428F8B54E00CC4DFE /* Assets.xcassets */; };
 		57B7B68828F8B54E00CC4DFE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57B7B68728F8B54E00CC4DFE /* Preview Assets.xcassets */; };
@@ -15,8 +15,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		57B7B67D28F8B54C00CC4DFE /* crapra1n.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = crapra1n.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		57B7B68028F8B54C00CC4DFE /* crapra1nApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crapra1nApp.swift; sourceTree = "<group>"; };
+		57B7B67D28F8B54C00CC4DFE /* ballpa1n.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ballpa1n.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		57B7B68028F8B54C00CC4DFE /* ballpa1n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ballpa1n.swift; sourceTree = "<group>"; };
 		57B7B68228F8B54C00CC4DFE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		57B7B68428F8B54E00CC4DFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		57B7B68728F8B54E00CC4DFE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -37,7 +37,7 @@
 		57B7B67428F8B54C00CC4DFE = {
 			isa = PBXGroup;
 			children = (
-				57B7B67F28F8B54C00CC4DFE /* crapra1n */,
+				57B7B67F28F8B54C00CC4DFE /* ballpa1n */,
 				57B7B67E28F8B54C00CC4DFE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,21 +45,21 @@
 		57B7B67E28F8B54C00CC4DFE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				57B7B67D28F8B54C00CC4DFE /* crapra1n.app */,
+				57B7B67D28F8B54C00CC4DFE /* ballpa1n.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		57B7B67F28F8B54C00CC4DFE /* crapra1n */ = {
+		57B7B67F28F8B54C00CC4DFE /* ballpa1n */ = {
 			isa = PBXGroup;
 			children = (
-				57B7B68028F8B54C00CC4DFE /* crapra1nApp.swift */,
+				57B7B68028F8B54C00CC4DFE /* ballpa1n.swift */,
 				57B7B68228F8B54C00CC4DFE /* ContentView.swift */,
 				57B7B68E28F8B59000CC4DFE /* UI */,
 				57B7B68428F8B54E00CC4DFE /* Assets.xcassets */,
 				57B7B68628F8B54E00CC4DFE /* Preview Content */,
 			);
-			path = crapra1n;
+			path = ballpa1n;
 			sourceTree = "<group>";
 		};
 		57B7B68628F8B54E00CC4DFE /* Preview Content */ = {
@@ -81,9 +81,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		57B7B67C28F8B54C00CC4DFE /* crapra1n */ = {
+		57B7B67C28F8B54C00CC4DFE /* ballpa1n */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 57B7B68B28F8B54E00CC4DFE /* Build configuration list for PBXNativeTarget "crapra1n" */;
+			buildConfigurationList = 57B7B68B28F8B54E00CC4DFE /* Build configuration list for PBXNativeTarget "ballpa1n" */;
 			buildPhases = (
 				57B7B67928F8B54C00CC4DFE /* Sources */,
 				57B7B67A28F8B54C00CC4DFE /* Frameworks */,
@@ -93,9 +93,9 @@
 			);
 			dependencies = (
 			);
-			name = crapra1n;
+			name = ballpa1n;
 			productName = crapra1n;
-			productReference = 57B7B67D28F8B54C00CC4DFE /* crapra1n.app */;
+			productReference = 57B7B67D28F8B54C00CC4DFE /* ballpa1n.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -113,7 +113,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 57B7B67828F8B54C00CC4DFE /* Build configuration list for PBXProject "crapra1n" */;
+			buildConfigurationList = 57B7B67828F8B54C00CC4DFE /* Build configuration list for PBXProject "ballpa1n" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -126,7 +126,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				57B7B67C28F8B54C00CC4DFE /* crapra1n */,
+				57B7B67C28F8B54C00CC4DFE /* ballpa1n */,
 			);
 		};
 /* End PBXProject section */
@@ -149,7 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57B7B68328F8B54C00CC4DFE /* ContentView.swift in Sources */,
-				57B7B68128F8B54C00CC4DFE /* crapra1nApp.swift in Sources */,
+				57B7B68128F8B54C00CC4DFE /* ballpa1n.swift in Sources */,
 				57B7B69028F8B5E200CC4DFE /* Windows7Bar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -278,7 +278,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"crapra1n/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 566RT33SA2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -292,7 +292,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.llsc12.crapra1n;
+				PRODUCT_BUNDLE_IDENTIFIER = com.llsc12.ballpa1n;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -307,7 +307,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"crapra1n/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 566RT33SA2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -321,7 +321,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.llsc12.crapra1n;
+				PRODUCT_BUNDLE_IDENTIFIER = com.llsc12.ballpa1n;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -332,7 +332,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		57B7B67828F8B54C00CC4DFE /* Build configuration list for PBXProject "crapra1n" */ = {
+		57B7B67828F8B54C00CC4DFE /* Build configuration list for PBXProject "ballpa1n" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				57B7B68928F8B54E00CC4DFE /* Debug */,
@@ -341,7 +341,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		57B7B68B28F8B54E00CC4DFE /* Build configuration list for PBXNativeTarget "crapra1n" */ = {
+		57B7B68B28F8B54E00CC4DFE /* Build configuration list for PBXNativeTarget "ballpa1n" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				57B7B68C28F8B54E00CC4DFE /* Debug */,

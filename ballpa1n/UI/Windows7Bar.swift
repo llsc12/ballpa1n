@@ -1,6 +1,6 @@
 //
 //  Windows7Bar.swift
-//  crapra1n
+//  ballpa1n
 //
 //  Created by Lakhan Lothiyi on 13/10/2022.
 //
@@ -12,9 +12,11 @@ struct Windows7Bar: View {
     @Binding var value: Float
     @State var max: Float = 1
     
-    @State var timer: Timer = Timer()
+    @State var timer: Timer? = nil
     
     @Environment(\.colorScheme) var cs
+    
+    @State var offset: CGFloat = -80
     
     var body: some View {
         GeometryReader { geo in
@@ -25,7 +27,7 @@ struct Windows7Bar: View {
                         Rectangle()
                             .foregroundColor(.green)
                             .frame(width: CGFloat( value / max ) * geo.size.width)
-                            .overlay {
+                            .overlay(content: {
                                 HStack {
                                     Rectangle()
                                         .fill(
@@ -33,13 +35,28 @@ struct Windows7Bar: View {
                                         )
                                         .frame(width: 80)
                                         .zIndex(3)
+                                        .offset(x: offset)
+                                        .task {
+                                            if timer == nil {
+                                                timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true, block: { _ in
+                                                    offset = -80
+                                                    withAnimation(.easeInOut(duration: 4.8)) {
+                                                         offset = geo.size.width + 80
+                                                    }
+                                                })
+                                            }
+                                        }
+                                    Spacer()
                                 }
-                            }
+                            })
                     }
                     
-                    Rectangle()
-                        .foregroundColor(cs == .light ? .white : .black)
-                        .zIndex(4)
+                    if geo.size.width - (CGFloat( value / max ) * geo.size.width) != 0 || !(value <= 0.1) {
+                        Rectangle()
+                            .foregroundColor(cs == .light ? .white : .black)
+                            .frame(width: geo.size.width - (CGFloat( value / max ) * geo.size.width))
+                            .zIndex(4)
+                    }
                 }
                 
                 Rectangle()
@@ -67,7 +84,7 @@ struct previewView: View {
             Windows7Bar(value: $number)
                 .task {
                     Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { _ in
-                        number+=0.001
+                        number+=0.0001
                         
                         if number >= 1 {
                             number = 0
