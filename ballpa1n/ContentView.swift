@@ -40,7 +40,7 @@ struct ContentView: View {
             }
             HStack {
                 Text("\(UIDevice.current.systemName) 1.0 - \(UIDevice.current.systemVersion) Jailbreak")
-                    .font(.body.monospaced())
+                    .font(.system(.body, design: .monospaced))
                 Spacer()
             }
         }
@@ -53,7 +53,7 @@ struct ContentView: View {
         VStack {
             HStack {
                 Text("Status\n(\(currentStage)/\(jbSteps.count)) \(jbSteps[currentStage].status)")
-                    .font(.callout.monospaced())
+                    .font(.system(.callout, design: .monospaced))
                 Spacer()
             }
             
@@ -82,16 +82,16 @@ struct ContentView: View {
             .flipped()
         }
         .frame(height: currentStage != 0 ? deviceHeight / 4 : 0)
-        .background {
+        .background(
             RoundedRectangle(cornerRadius: 15, style: .continuous)
                 .foregroundColor(Color("ConsoleBG"))
-        }
+        )
         .opacity(currentStage != 0 ? 1 : 0)
         .padding(.horizontal)
         .flipped()
     }
     
-    @ViewBuilder func Line(_ str: String) -> some View { HStack { Text(str).font(.body.monospaced()); Spacer() } }
+    @ViewBuilder func Line(_ str: String) -> some View { HStack { Text(str).font(.system(.body, design: .monospaced)); Spacer() } }
     
     @ViewBuilder
     var controls: some View {
@@ -104,13 +104,13 @@ struct ContentView: View {
                 }
             } label: {
                 Text(currentStage == 0 ? "Jailbreak" : finished ? "Respring" : "Jailbreaking")
-                    .font(.title3.monospaced())
+                    .font(.system(.title3, design: .monospaced))
                     .foregroundColor(.white)
                     .padding()
-                    .background {
+                    .background(
                         Capsule()
                             .foregroundColor(.blue)
-                    }
+                    )
             }
             .buttonStyle(.plain)
             .disabled(finished ? false : currentStage != 0)
