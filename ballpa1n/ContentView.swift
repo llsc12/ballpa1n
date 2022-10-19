@@ -50,14 +50,17 @@ struct ContentView: View {
     
     @ViewBuilder
     var statusbar: some View {
+        
+        let stage = currentStage == 0 ? 0 : currentStage - 1
+        let max = jbSteps.count
         VStack {
             HStack {
-                Text("Status\n(\(currentStage)/\(jbSteps.count)) \(jbSteps[currentStage].status)")
+                Text("Status\n(\(finished ? max : stage)/\(max)) \(finished ? "Finished." : jbSteps[stage].status)")
                     .font(.system(.callout, design: .monospaced))
                 Spacer()
             }
             
-            ProgressView(value: Float(currentStage), total: Float(jbSteps.count))
+            ProgressView(value: finished ? Float(max) : Float(stage), total: Float(max))
                 .frame(height: currentStage != 0 ? 4 : 0)
                 .opacity(currentStage != 0 ? 1 : 0)
                 .animation(.spring(), value: currentStage)
@@ -91,7 +94,7 @@ struct ContentView: View {
         .flipped()
     }
     
-    @ViewBuilder func Line(_ str: String) -> some View { HStack { Text(str).font(.system(.body, design: .monospaced)); Spacer() } }
+    @ViewBuilder func Line(_ str: String) -> some View { HStack { Text(str).font(.system(.caption2, design: .monospaced)); Spacer() } }
     
     @ViewBuilder
     var controls: some View {
@@ -136,6 +139,7 @@ struct ContentView: View {
             
             for step in jbSteps {
                 var waitTime: Double = Double(step.avgInterval) + Double.random(in: -0.2...1)
+                if step.avgInterval == 0 { waitTime = 0}
                 if waitTime < 0 { waitTime = 0 }
                 
                 for logItem in step.consoleLogs {
@@ -161,11 +165,14 @@ struct ContentView: View {
                         }
                         canIncrement = false
                         currentStage+=1
-                    } else {
-                        finished = true
                     }
                 }
             }
+            
+            withAnimation(.spring()) {
+                finished = true
+            }
+            Console.shared.lines.append("[*] Finished! Please respring.")
         }
     }
     
@@ -198,16 +205,117 @@ func wait(_ time: Double) async {
 let jbSteps: [StageStep] = [
     StageStep(status: "Ready to jailbreak", avgInterval: 0, consoleLogs: []),
     StageStep(status: "Ensuring resources", avgInterval: 0.8, consoleLogs: [
-        ConsoleStep(delay: 0.2, line: "[*] Ensuring resources"),
+        ConsoleStep(delay: 0.2, line: "[*] Stage (1): Ensuring resources"),
         ConsoleStep(delay: 0.7, line: "[+] Ensured resources"),
     ]),
-    StageStep(status: "Ensuring resources2", avgInterval: 1, consoleLogs: [
-        ConsoleStep(delay: 0.2, line: "[*] Ensuring resources"),
-        ConsoleStep(delay: 0.7, line: "[+] Ensured resources"),
+    StageStep(status: "Exploiting kernel", avgInterval: 0.5, consoleLogs: [
+        ConsoleStep(delay: 0.2, line: "[*] Stage (2): Exploiting kernel"),
+        ConsoleStep(delay: 9, line: "[+] Exploited kernel"),
     ]),
-    StageStep(status: "Ensuring resources3", avgInterval: 1, consoleLogs: [
-        ConsoleStep(delay: 0.2, line: "[*] Ensuring resources"),
-        ConsoleStep(delay: 0.7, line: "[+] Ensured resources"),
+    StageStep(status: "Initializing", avgInterval: 0.1, consoleLogs: [
+        ConsoleStep(delay: 0.1, line: "[*] Stage (3): Initializing"),
+    ]),
+    StageStep(status: "Finding kernel slide", avgInterval: 0.1, consoleLogs: [
+        ConsoleStep(delay: 0.1, line: "[*] Stage (4): Finding kernel slide"),
+        ConsoleStep(delay: 0, line: "[+] Found kernel slide: 0x8d8c000"),
+    ]),
+    StageStep(status: "Finding kernel offsets", avgInterval: 0.1, consoleLogs: [
+        ConsoleStep(delay: 0.1, line: "[*] Stage (5): Finding kernel offsets"),
+        ConsoleStep(delay: 0, line: "[+] Found kernel offsets"),
+    ]),
+    StageStep(status: "Finding data structures", avgInterval: 0.1, consoleLogs: [
+        ConsoleStep(delay: 0.1, line: "[*] Stage (6): Finding data structures"),
+        ConsoleStep(delay: 0, line: "[+] Found data structures"),
+    ]),
+    StageStep(status: "Finding kernel offsets", avgInterval: 0.1, consoleLogs: [
+        ConsoleStep(delay: 0.1, line: "[*] Stage (7): Finding kernel offsets"),
+        ConsoleStep(delay: 0, line: "[+] Found kernel offsets"),
+    ]),
+    StageStep(status: "Obtaining root privileges", avgInterval: 0.1, consoleLogs: [
+        ConsoleStep(delay: 0.1, line: "[*] Stage (8): Obtaining root privileges"),
+        ConsoleStep(delay: 0, line: "[+] Obtained root privileges"),
+    ]),
+    StageStep(status: "Disabling sandbox", avgInterval: 0.1, consoleLogs: [
+        ConsoleStep(delay: 0.1, line: "[*] Stage (9): Disabling sandbox"),
+        ConsoleStep(delay: 0, line: "[+] Disabled sandbox"),
+    ]),
+    StageStep(status: "Updating host port", avgInterval: 0.1, consoleLogs: [
+        ConsoleStep(delay: 0.1, line: "[*] Stage (10): Updating host port"),
+        ConsoleStep(delay: 0, line: "[+] Updated host port"),
+    ]),
+    StageStep(status: "Finding kernel offsets", avgInterval: 0.1, consoleLogs: [
+        ConsoleStep(delay: 0.1, line: "[*] Stage (11): Finding kernel offsets"),
+        ConsoleStep(delay: 0, line: "[+] Found kernel offsets"),
+    ]),
+    StageStep(status: "Enabling dynamic codesign", avgInterval: 0.1, consoleLogs: [
+        ConsoleStep(delay: 0.1, line: "[*] Stage (12): Enabling dynamic codesign"),
+        ConsoleStep(delay: 0, line: "[+] Enabled dynamic codesign"),
+    ]),
+    StageStep(status: "", avgInterval: 0, consoleLogs: []),
+    StageStep(status: "", avgInterval: 0, consoleLogs: []),
+    StageStep(status: "", avgInterval: 0, consoleLogs: []),
+    StageStep(status: "Saving kernel primitives", avgInterval: 0.1, consoleLogs: [
+        ConsoleStep(delay: 0.1, line: "[*] Stage (16): Saving kernel primitives"),
+        ConsoleStep(delay: 0, line: "[+] Saved kernel primitives"),
+    ]),
+    StageStep(status: "", avgInterval: 0, consoleLogs: []),
+    StageStep(status: "Disabling codesigning", avgInterval: 0.1, consoleLogs: [
+        ConsoleStep(delay: 0.1, line: "[*] Stage (18): Disabling codesigning"),
+        ConsoleStep(delay: 0, line: "[+] Disabled codesigning"),
+    ]),
+    StageStep(status: "Obtaining entitlements", avgInterval: 0.1, consoleLogs: [
+        ConsoleStep(delay: 0.1, line: "[*] Stage (19): Obtaining entitlements"),
+        ConsoleStep(delay: 0, line: "[+] Obtained entitlements"),
+    ]),
+    StageStep(status: "Purging software updates", avgInterval: 0.1, consoleLogs: [
+        ConsoleStep(delay: 0.1, line: "[*] Stage (20): Purging software updates"),
+        ConsoleStep(delay: 0, line: "[+] Purged software updates"),
+    ]),
+    StageStep(status: "Setting boot-nonce generator", avgInterval: 0.1, consoleLogs: [
+        ConsoleStep(delay: 0.1, line: "[*] Stage (21): Setting boot-nonce generator"),
+        ConsoleStep(delay: 0, line: "[+] Set boot-nonce generator"),
+    ]),
+    StageStep(status: "Remounting root filesystem", avgInterval: 0.1, consoleLogs: [
+        ConsoleStep(delay: 0.1, line: "[*] Stage (22): Remounting root filesystem"),
+        ConsoleStep(delay: 0, line: "[+] Remounted root filesystem"),
+    ]),
+    StageStep(status: "Preparing filesystem", avgInterval: 0.1, consoleLogs: [
+        ConsoleStep(delay: 0.1, line: "[*] Stage (23): Preparing filesystem"),
+        ConsoleStep(delay: 0.1, line: "[+] Enabled code substitution"),
+        ConsoleStep(delay: 0, line: "[+] Prepared filesystem"),
+    ]),
+    StageStep(status: "Resolving dependencies", avgInterval: 0.1, consoleLogs: [
+        ConsoleStep(delay: 0.1, line: "[*] Stage (24): Resolving dependencies"),
+        ConsoleStep(delay: 0.2, line: """
+[*] Resource Pkgs: "(
+bzip2,
+"coreutils-bin",
+diffutils,
+file,
+sed,
+findutils,
+gzip,
+libplist3,
+firmware,
+"ca-certificates",
+"libssl1.1.1",
+ldid,
+lzma,
+"ncurses5-libs"
+"profile.d",
+coreutils,
+ncurses,
+XZ,
+tar,
+dpkg,
+grep,
+readline,
+bash,
+launchctl,
+"com.ex.substitute"
+)
+"""),
+        ConsoleStep(delay: 0.1, line: "[+] Resolved dependencies")
     ]),
 ]
 
