@@ -97,9 +97,13 @@ struct ContentView: View {
     var controls: some View {
         VStack {
             Button {
-                beginJB()
+                if finished {
+                    respring()
+                } else {
+                    beginJB()
+                }
             } label: {
-                Text(currentStage == 0 ? "Jailbreak" : "Jailbreaking")
+                Text(currentStage == 0 ? "Jailbreak" : finished ? "Respring" : "Jailbreaking")
                     .font(.title3)
                     .monospaced()
                     .foregroundColor(.white)
@@ -110,7 +114,7 @@ struct ContentView: View {
                     }
             }
             .buttonStyle(.plain)
-            .disabled(currentStage != 0)
+            .disabled(finished ? false : currentStage != 0)
             .padding()
         }
     }

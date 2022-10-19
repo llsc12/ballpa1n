@@ -14,10 +14,10 @@
             filePath = "ballpa1n/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "beginJB()"
-            landmarkType = "7">
+            landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -30,10 +30,42 @@
             filePath = "ballpa1n/ContentView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "beginJB()"
-            landmarkType = "7">
+            landmarkType = "9">
+            <Locations>
+               <Location
+                  uuid = "DF8D4D17-DF76-4065-89CE-70FAB34EC2B4 - c669dda36a93d153"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in ballpa1n.ContentView.beginJB() -&gt; ()"
+                  moduleName = "ballpa1n"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lakhanlothiyi/Desktop/crapra1n/ballpa1n/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "147"
+                  endingLineNumber = "147"
+                  offsetFromSymbolStart = "228">
+               </Location>
+               <Location
+                  uuid = "DF8D4D17-DF76-4065-89CE-70FAB34EC2B4 - 6cde49a81bea6dae"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in closure #1 @Sendable () async -&gt; () in ballpa1n.ContentView.beginJB() -&gt; ()"
+                  moduleName = "ballpa1n"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/lakhanlothiyi/Desktop/crapra1n/ballpa1n/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "148"
+                  endingLineNumber = "148"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
