@@ -317,7 +317,37 @@ launchctl,
 """),
         ConsoleStep(delay: 0.1, line: "[+] Resolved dependencies")
     ]),
+    StageStep(status: "Verifying dependencies", avgInterval: 0.1, consoleLogs: [
+        ConsoleStep(delay: 0.1, line: "[*] Stage (25): Verifying dependencies"),
+        ConsoleStep(delay: 1.5, line: "[+] File checksums verified"),
+        ConsoleStep(delay: 0, line: "[*] No errors in verifying checksums"),
+    ]),
+    StageStep(status: "Unknown", avgInterval: 0.1, consoleLogs: [
+        ConsoleStep(delay: 0.1, line: "[*] Stage (26): Unknown"),
+    ]),
+    StageStep(status: "Preparing resources", avgInterval: 0.5, consoleLogs: [
+        ConsoleStep(delay: 0.1, line: "[*] Stage (27): Preparing resources"),
+        ConsoleStep(delay: 0.2, line: "[+] Unpacking"),
+    ]),
+    StageStep(status: "Unknown", avgInterval: 0.1, consoleLogs: [
+        ConsoleStep(delay: 0.1, line: "[*] Stage (28): Unknown"),
+    ]),
+    StageStep(status: "Bootstrapping resources", avgInterval: 1, consoleLogs: [
+        ConsoleStep(delay: 0.1, line: "[*] Stage (29): Bootstrapping resources"),
+        ConsoleStep(delay: 0.4, line: "[+] Copying resources"),
+    ]),
+    StageStep(status: "Unknown", avgInterval: 0.1, consoleLogs: [
+        ConsoleStep(delay: 0.1, line: "[*] Stage (30): Unknown"),
+    ]),
+    StageStep(status: "Cleaning up", avgInterval: 1, consoleLogs: [
+        ConsoleStep(delay: 0.1, line: "[*] Stage (31): Cleaning up"),
+        ConsoleStep(delay: 0.2, line: "[+] Removing temporary files"),
+    ]),
 ]
+
+#warning("Unknown on 26")
+
+#warning("Unknown on 28")
 
 struct StageStep {
     let status: String
