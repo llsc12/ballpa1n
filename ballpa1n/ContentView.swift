@@ -129,10 +129,11 @@ struct ContentView: View {
     
     func beginJB() {
         // cool system to iterate through jbSteps array
-        
-        Task {
+        DispatchQueue.global().async {
             withAnimation(.spring()) { currentStage+=1 }
             let max = (jbSteps.count - 1)
+            
+            var canIncrement = false
             
             for step in jbSteps {
                 var waitTime: Double = Double(step.avgInterval) + Double.random(in: -0.2...1)
@@ -141,15 +142,25 @@ struct ContentView: View {
                 for logItem in step.consoleLogs {
                     var logWait: Double = Double(logItem.delay) + Double.random(in: -0.1...0.8)
                     if logWait < 0 { logWait = 0 }
-                    await wait(logWait)
+                    usleep(UInt32(logWait * 1000000))
                     
                     Console.shared.lines.append(logItem.line)
+                    
+                    if logItem == step.consoleLogs.last! {
+                        canIncrement = true
+                    }
                 }
                 
-                await wait(waitTime)
+                if step.consoleLogs.isEmpty { canIncrement = true }
+                
+                usleep(UInt32(waitTime * 1000000))
                 
                 withAnimation(.spring()) {
                     if currentStage != max {
+                        while !canIncrement {
+                            Thread.sleep(forTimeInterval: 0.02)
+                        }
+                        canIncrement = false
                         currentStage+=1
                     } else {
                         finished = true
@@ -211,6 +222,12 @@ struct StageStep {
 struct ConsoleStep {
     let delay: Float
     let line: String
+}
+
+extension ConsoleStep: Equatable {
+    static func == (lhs: ConsoleStep, rhs: ConsoleStep) -> Bool {
+        return lhs.delay == rhs.delay && lhs.line == rhs.line
+    }
 }
 
 struct PreviewIos: PreviewProvider {
