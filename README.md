@@ -1,5 +1,5 @@
 # ballpa1n
-totally real jb
+totally real jb for iOS 1.0 - 16.x
 
 (now incudes more pa1n)
 
