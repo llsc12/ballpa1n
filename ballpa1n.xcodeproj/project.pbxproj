@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5755E4802901DF6A002287D3 /* HostManager.c in Sources */ = {isa = PBXBuildFile; fileRef = 5755E47F2901DF6A002287D3 /* HostManager.c */; };
+		5755E4842901E2B7002287D3 /* WhatCanINameThis.m in Sources */ = {isa = PBXBuildFile; fileRef = 5755E4832901E2B7002287D3 /* WhatCanINameThis.m */; };
 		57B7B68128F8B54C00CC4DFE /* ballpa1n.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7B68028F8B54C00CC4DFE /* ballpa1n.swift */; };
 		57B7B68328F8B54C00CC4DFE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7B68228F8B54C00CC4DFE /* ContentView.swift */; };
 		57B7B68528F8B54E00CC4DFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57B7B68428F8B54E00CC4DFE /* Assets.xcassets */; };
@@ -14,6 +16,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5755E47D2901DEC6002287D3 /* bridging or something.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bridging or something.h"; sourceTree = "<group>"; };
+		5755E47E2901DF64002287D3 /* HostManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HostManager.h; sourceTree = "<group>"; };
+		5755E47F2901DF6A002287D3 /* HostManager.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = HostManager.c; sourceTree = "<group>"; };
+		5755E4822901E2A7002287D3 /* WhatCanINameThis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WhatCanINameThis.h; sourceTree = "<group>"; };
+		5755E4832901E2B7002287D3 /* WhatCanINameThis.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WhatCanINameThis.m; sourceTree = "<group>"; };
 		57B7B67D28F8B54C00CC4DFE /* ballpa1n.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ballpa1n.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57B7B68028F8B54C00CC4DFE /* ballpa1n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ballpa1n.swift; sourceTree = "<group>"; };
 		57B7B68228F8B54C00CC4DFE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +39,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5755E47C2901DD80002287D3 /* Zefram stolen code */ = {
+			isa = PBXGroup;
+			children = (
+				5755E4812901E22C002287D3 /* wrapped */,
+				5755E47D2901DEC6002287D3 /* bridging or something.h */,
+				5755E47E2901DF64002287D3 /* HostManager.h */,
+				5755E47F2901DF6A002287D3 /* HostManager.c */,
+			);
+			path = "Zefram stolen code";
+			sourceTree = "<group>";
+		};
+		5755E4812901E22C002287D3 /* wrapped */ = {
+			isa = PBXGroup;
+			children = (
+				5755E4822901E2A7002287D3 /* WhatCanINameThis.h */,
+				5755E4832901E2B7002287D3 /* WhatCanINameThis.m */,
+			);
+			path = wrapped;
+			sourceTree = "<group>";
+		};
 		57B7B67428F8B54C00CC4DFE = {
 			isa = PBXGroup;
 			children = (
@@ -53,6 +80,7 @@
 			children = (
 				57B7B68028F8B54C00CC4DFE /* ballpa1n.swift */,
 				57B7B68228F8B54C00CC4DFE /* ContentView.swift */,
+				5755E47C2901DD80002287D3 /* Zefram stolen code */,
 				57B7B68428F8B54E00CC4DFE /* Assets.xcassets */,
 				57B7B68628F8B54E00CC4DFE /* Preview Content */,
 			);
@@ -138,7 +166,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				57B7B68328F8B54C00CC4DFE /* ContentView.swift in Sources */,
+				5755E4842901E2B7002287D3 /* WhatCanINameThis.m in Sources */,
 				57B7B68128F8B54C00CC4DFE /* ballpa1n.swift in Sources */,
+				5755E4802901DF6A002287D3 /* HostManager.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +314,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.llsc12.ballpa1n;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ballpa1n/Zefram stolen code/bridging or something.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -314,6 +345,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.llsc12.ballpa1n;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ballpa1n/Zefram stolen code/bridging or something.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
