@@ -8,22 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		5755E4802901DF6A002287D3 /* HostManager.c in Sources */ = {isa = PBXBuildFile; fileRef = 5755E47F2901DF6A002287D3 /* HostManager.c */; };
-		5755E4842901E2B7002287D3 /* WhatCanINameThis.m in Sources */ = {isa = PBXBuildFile; fileRef = 5755E4832901E2B7002287D3 /* WhatCanINameThis.m */; };
+		5755E4842901E2B7002287D3 /* HostManagerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 5755E4832901E2B7002287D3 /* HostManagerBridge.m */; };
 		57B7B68128F8B54C00CC4DFE /* ballpa1n.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7B68028F8B54C00CC4DFE /* ballpa1n.swift */; };
 		57B7B68328F8B54C00CC4DFE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7B68228F8B54C00CC4DFE /* ContentView.swift */; };
 		57B7B68528F8B54E00CC4DFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57B7B68428F8B54E00CC4DFE /* Assets.xcassets */; };
+		AA1544EB2901EACA009B563A /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1544EA2901EAC9009B563A /* IOKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5755E47D2901DEC6002287D3 /* bridging or something.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bridging or something.h"; sourceTree = "<group>"; };
 		5755E47E2901DF64002287D3 /* HostManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HostManager.h; sourceTree = "<group>"; };
 		5755E47F2901DF6A002287D3 /* HostManager.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = HostManager.c; sourceTree = "<group>"; };
-		5755E4822901E2A7002287D3 /* WhatCanINameThis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WhatCanINameThis.h; sourceTree = "<group>"; };
-		5755E4832901E2B7002287D3 /* WhatCanINameThis.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WhatCanINameThis.m; sourceTree = "<group>"; };
+		5755E4822901E2A7002287D3 /* HostManagerBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HostManagerBridge.h; sourceTree = "<group>"; };
+		5755E4832901E2B7002287D3 /* HostManagerBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HostManagerBridge.m; sourceTree = "<group>"; };
 		57B7B67D28F8B54C00CC4DFE /* ballpa1n.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ballpa1n.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57B7B68028F8B54C00CC4DFE /* ballpa1n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ballpa1n.swift; sourceTree = "<group>"; };
 		57B7B68228F8B54C00CC4DFE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		57B7B68428F8B54E00CC4DFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AA1544E72901E9BB009B563A /* IOKitLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IOKitLib.h; sourceTree = "<group>"; };
+		AA1544E82901E9BB009B563A /* CoreFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreFoundation.h; sourceTree = "<group>"; };
+		AA1544EA2901EAC9009B563A /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		AA1544EC2901EDDB009B563A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA1544EB2901EACA009B563A /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,10 +46,12 @@
 		5755E47C2901DD80002287D3 /* Zefram stolen code */ = {
 			isa = PBXGroup;
 			children = (
+				AA1544E62901E9A6009B563A /* include */,
 				5755E4812901E22C002287D3 /* wrapped */,
 				5755E47D2901DEC6002287D3 /* bridging or something.h */,
 				5755E47E2901DF64002287D3 /* HostManager.h */,
 				5755E47F2901DF6A002287D3 /* HostManager.c */,
+				AA1544EC2901EDDB009B563A /* README.md */,
 			);
 			path = "Zefram stolen code";
 			sourceTree = "<group>";
@@ -51,8 +59,8 @@
 		5755E4812901E22C002287D3 /* wrapped */ = {
 			isa = PBXGroup;
 			children = (
-				5755E4822901E2A7002287D3 /* WhatCanINameThis.h */,
-				5755E4832901E2B7002287D3 /* WhatCanINameThis.m */,
+				5755E4822901E2A7002287D3 /* HostManagerBridge.h */,
+				5755E4832901E2B7002287D3 /* HostManagerBridge.m */,
 			);
 			path = wrapped;
 			sourceTree = "<group>";
@@ -62,6 +70,7 @@
 			children = (
 				57B7B67F28F8B54C00CC4DFE /* ballpa1n */,
 				57B7B67E28F8B54C00CC4DFE /* Products */,
+				AA1544E92901EAC9009B563A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +91,23 @@
 				57B7B68428F8B54E00CC4DFE /* Assets.xcassets */,
 			);
 			path = ballpa1n;
+			sourceTree = "<group>";
+		};
+		AA1544E62901E9A6009B563A /* include */ = {
+			isa = PBXGroup;
+			children = (
+				AA1544E82901E9BB009B563A /* CoreFoundation.h */,
+				AA1544E72901E9BB009B563A /* IOKitLib.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		AA1544E92901EAC9009B563A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA1544EA2901EAC9009B563A /* IOKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,7 +180,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57B7B68328F8B54C00CC4DFE /* ContentView.swift in Sources */,
-				5755E4842901E2B7002287D3 /* WhatCanINameThis.m in Sources */,
+				5755E4842901E2B7002287D3 /* HostManagerBridge.m in Sources */,
 				57B7B68128F8B54C00CC4DFE /* ballpa1n.swift in Sources */,
 				5755E4802901DF6A002287D3 /* HostManager.c in Sources */,
 			);

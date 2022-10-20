@@ -8,6 +8,6 @@
 #ifndef bridging_or_something_h
 #define bridging_or_something_h
 
-#import "wrapped/WhatCanINameThis.h"
+#import "wrapped/HostManagerBridge.h"
 
 #endif /* bridging_or_something_h */

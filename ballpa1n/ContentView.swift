@@ -29,7 +29,7 @@ struct ContentView: View {
             disclaimer
         }
         .onAppear {
-            HostManagerModelName(<#T##Int8#>)
+            HostManager.
         }
     }
     

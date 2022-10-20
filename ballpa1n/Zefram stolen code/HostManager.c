@@ -1,3 +1,5 @@
+// Thanks to this mf named Capt Inc for his ballpa1n
+
 #import "HostManager.h"
 #import <stddef.h>
 #import <stdint.h>
@@ -7,7 +9,6 @@
 #import <CoreFoundation/CoreFoundation.h>
 #import "include/CoreFoundation.h"
 #import "include/IOKitLib.h"
-#import "Utilities.h"
 
 int HostManagerModelName(char **name) {
     int retval = 1;
@@ -547,7 +548,7 @@ int HostManagerPlatformName(char **name) {
         goto end;
     }
     
-    if (streq(string, "iPhone OS")) {
+    if (strcmp(string, "iPhone OS") == 0) {
         free(string);
         string = NULL;
         string = strdup("iOS");

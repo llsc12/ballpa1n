@@ -1,3 +1,5 @@
+// Thanks to this mf named Capt Inc for his ballpa1n
+
 int HostManagerModelName(char **name);
 int HostManagerModelNamePrimary(char **name);
 int HostManagerModelNameSecondary(char **name);
