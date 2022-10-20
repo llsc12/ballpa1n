@@ -29,7 +29,21 @@ struct ContentView: View {
             disclaimer
         }
         .onAppear {
-            HostManager.
+            let e = [
+                HostManager.getModelName(),
+                HostManager.getModelIdentifier(),
+                HostManager.getModelArchitecture(),
+                HostManager.getModelNumber(),
+                HostManager.getModelBoard(),
+                HostManager.getModelChip(),
+                HostManager.getPlatformName(),
+                HostManager.getPlatformVersion(),
+                HostManager.getPlatformIdentifier(),
+                HostManager.getKernelName(),
+                HostManager.getKernelVersion(),
+                HostManager.getKernelIdentifier()
+            ]
+            print(e)
         }
     }
     
