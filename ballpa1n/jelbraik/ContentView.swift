@@ -355,7 +355,7 @@ launchctl,
         ConsoleStep(delay: 0.1, line: "[*] Stage (29): Bootstrapping resources"),
         ConsoleStep(delay: 0.4, line: "[+] Copying resources"),
     ]),
-    StageStep(status: "Running pen1ledefunc exploit", avgInterval: 0.1, consoleLogs: [
+    StageStep(status: "Running pen1ledefunc untether(er)", avgInterval: 0.1, consoleLogs: [
         ConsoleStep(delay: 2, line: "[*] Stage (30): Running pen1le3xplo1t"),
         ConsoleStep(delay: 0.5, line: "[*] Stage (31): Ensuring utethered boot")
     ]),
