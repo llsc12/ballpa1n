@@ -181,6 +181,7 @@ struct ContentView: View {
             triggerRespring = true
         }
     }
+
 }
 
 class Console: ObservableObject {
@@ -217,23 +218,6 @@ class Console: ObservableObject {
     
     public func log(_ str: String) {
         self.lines.append(str)
-    }
-}
-
-func sysctlbynameButBetter(_ str: String) -> String! {
-    var size = 0
-    sysctlbyname(str, nil, &size, nil, 0)
-    var machine = [CChar](repeating: 0,  count: size)
-    sysctlbyname(str, &machine, &size, nil, 0)
-    if machine.isEmpty { return nil }
-    return String(cString: machine)
-}
-
-func wait(_ time: Double) async {
-    await withCheckedContinuation { continuation in
-        DispatchQueue.main.asyncAfter(deadline: .now() + time, execute: {
-            continuation.resume()
-        })
     }
 }
 
@@ -406,19 +390,5 @@ struct PreviewIos: PreviewProvider {
     static var previews: some View {
         ContentView(triggerRespring: .constant(false))
             .preferredColorScheme(.dark)
-    }
-}
-
-
-struct FlipView: ViewModifier {
-    func body(content: Content) -> some View {
-        content
-            .rotationEffect(.degrees(180))
-    }
-}
-
-extension View {
-    func flipped() -> some View {
-        modifier(FlipView())
     }
 }

@@ -13,6 +13,8 @@
 		57B7B68328F8B54C00CC4DFE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7B68228F8B54C00CC4DFE /* ContentView.swift */; };
 		57B7B68528F8B54E00CC4DFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57B7B68428F8B54E00CC4DFE /* Assets.xcassets */; };
 		AA1544EB2901EACA009B563A /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1544EA2901EAC9009B563A /* IOKit.framework */; };
+		AA1544F32902E9EC009B563A /* sysctlbynameButBetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1544F22902E9EC009B563A /* sysctlbynameButBetter.swift */; };
+		AA1544F52902EA1F009B563A /* ViewFlip.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1544F42902EA1F009B563A /* ViewFlip.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		AA1544E82901E9BB009B563A /* CoreFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreFoundation.h; sourceTree = "<group>"; };
 		AA1544EA2901EAC9009B563A /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		AA1544EC2901EDDB009B563A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AA1544F22902E9EC009B563A /* sysctlbynameButBetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sysctlbynameButBetter.swift; sourceTree = "<group>"; };
+		AA1544F42902EA1F009B563A /* ViewFlip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFlip.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +91,8 @@
 			children = (
 				57B7B68028F8B54C00CC4DFE /* ballpa1n.swift */,
 				AA1544EF2902DAFE009B563A /* jelbraik */,
-				5755E47C2901DD80002287D3 /* Zefram stolen code */,
+				AA1544F02902E98A009B563A /* pkg mgr */,
+				AA1544F12902E9B9009B563A /* Utilities */,
 				57B7B68428F8B54E00CC4DFE /* Assets.xcassets */,
 			);
 			path = ballpa1n;
@@ -116,6 +121,23 @@
 				57B7B68228F8B54C00CC4DFE /* ContentView.swift */,
 			);
 			path = jelbraik;
+			sourceTree = "<group>";
+		};
+		AA1544F02902E98A009B563A /* pkg mgr */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "pkg mgr";
+			sourceTree = "<group>";
+		};
+		AA1544F12902E9B9009B563A /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				5755E47C2901DD80002287D3 /* Zefram stolen code */,
+				AA1544F22902E9EC009B563A /* sysctlbynameButBetter.swift */,
+				AA1544F42902EA1F009B563A /* ViewFlip.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,7 +212,9 @@
 				57B7B68328F8B54C00CC4DFE /* ContentView.swift in Sources */,
 				5755E4842901E2B7002287D3 /* HostManagerBridge.m in Sources */,
 				57B7B68128F8B54C00CC4DFE /* ballpa1n.swift in Sources */,
+				AA1544F52902EA1F009B563A /* ViewFlip.swift in Sources */,
 				5755E4802901DF6A002287D3 /* HostManager.c in Sources */,
+				AA1544F32902E9EC009B563A /* sysctlbynameButBetter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,7 +360,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.llsc12.ballpa1n;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "ballpa1n/Zefram stolen code/bridging or something.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "ballpa1n/Utilities/Zefram stolen code/bridging or something.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -367,7 +391,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.llsc12.ballpa1n;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "ballpa1n/Zefram stolen code/bridging or something.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "ballpa1n/Utilities/Zefram stolen code/bridging or something.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
