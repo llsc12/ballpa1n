@@ -86,7 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				57B7B68028F8B54C00CC4DFE /* ballpa1n.swift */,
-				57B7B68228F8B54C00CC4DFE /* ContentView.swift */,
+				AA1544EF2902DAFE009B563A /* jelbraik */,
 				5755E47C2901DD80002287D3 /* Zefram stolen code */,
 				57B7B68428F8B54E00CC4DFE /* Assets.xcassets */,
 			);
@@ -108,6 +108,14 @@
 				AA1544EA2901EAC9009B563A /* IOKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AA1544EF2902DAFE009B563A /* jelbraik */ = {
+			isa = PBXGroup;
+			children = (
+				57B7B68228F8B54C00CC4DFE /* ContentView.swift */,
+			);
+			path = jelbraik;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

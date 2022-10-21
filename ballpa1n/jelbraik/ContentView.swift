@@ -123,7 +123,7 @@ struct ContentView: View {
     
     @ViewBuilder
     var disclaimer: some View {
-        Text("Made by llsc12\nThis is a fake jailbreak, it's made for fun and because I was bored.")
+        Text("Made by llsc12\nThis is a fake jailbreak, it's made for fun and because I was bored.\nTY capt inc for device info code")
             .foregroundColor(.secondary)
             .font(.system(size: 9))
             .multilineTextAlignment(.center)
