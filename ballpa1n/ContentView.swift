@@ -147,7 +147,7 @@ struct ContentView: View {
                     if logWait < 0 { logWait = 0 }
                     usleep(UInt32(logWait * 1000000))
                     
-                    Console.shared.lines.append(logItem.line)
+                    Console.shared.log(logItem.line)
                     
                     if logItem == step.consoleLogs.last! {
                         canIncrement = true
@@ -172,7 +172,7 @@ struct ContentView: View {
             withAnimation(.spring()) {
                 finished = true
             }
-            Console.shared.lines.append("[*] Finished! Please respring.")
+            Console.shared.log("[*] Finished! Please respring.")
         }
     }
     
