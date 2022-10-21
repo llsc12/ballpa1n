@@ -28,23 +28,6 @@ struct ContentView: View {
             
             disclaimer
         }
-        .onAppear {
-            let e = [
-                HostManager.getModelName(),
-                HostManager.getModelIdentifier(),
-                HostManager.getModelArchitecture(),
-                HostManager.getModelNumber(),
-                HostManager.getModelBoard(),
-                HostManager.getModelChip(),
-                HostManager.getPlatformName(),
-                HostManager.getPlatformVersion(),
-                HostManager.getPlatformIdentifier(),
-                HostManager.getKernelName(),
-                HostManager.getKernelVersion(),
-                HostManager.getKernelIdentifier()
-            ]
-            print(e)
-        }
     }
     
     @ViewBuilder
@@ -207,8 +190,43 @@ class Console: ObservableObject {
     @Published var lines = [String]()
     
     init() {
-        lines.append("wseifgorejgoir")
+        let d = HostManager.self
+        let machinename = d.getModelName() ?? "Unknown"
+        let modelname = d.getModelBoard() ?? "Unknown"
+        let modelchip = d.getModelChip() ?? "Unknown"
+        let modelarch = d.getModelArchitecture() ?? "Unknown"
+        let kernname = d.getKernelName() ?? "Unknown"
+        let kernver = d.getKernelVersion() ?? "Unknown"
+        let kernid = d.getKernelIdentifier() ?? "Unknown"
+        let platformname = d.getPlatformName() ?? "Unknown"
+        let platformver = d.getPlatformVersion() ?? "Unknown"
+        d.getModelChip()
+        var systemInfo = utsname()
+        uname(&systemInfo)
+        let machineMirror = Mirror(reflecting: systemInfo.version)
+        let unamestr = machineMirror.children.reduce("") { identifier, element in
+            guard let value = element.value as? Int8 , value != 0 else { return identifier }
+            return identifier + String(UnicodeScalar(UInt8(value)))
+        }
+                
+        log("[*] Machine Name: \(machinename)")
+        log("[*] Model Name: \(modelname)")
+        log("[*] \(unamestr)")
+        log("[*] System Version: \(platformname) \(platformver)")
     }
+    
+    public func log(_ str: String) {
+        self.lines.append(str)
+    }
+}
+
+func sysctlbynameButBetter(_ str: String) -> String! {
+    var size = 0
+    sysctlbyname(str, nil, &size, nil, 0)
+    var machine = [CChar](repeating: 0,  count: size)
+    sysctlbyname(str, &machine, &size, nil, 0)
+    if machine.isEmpty { return nil }
+    return String(cString: machine)
 }
 
 func wait(_ time: Double) async {
