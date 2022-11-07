@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570A7FEC290301FF00FAFFC7 /* PackageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570A7FEB290301FF00FAFFC7 /* PackageManager.swift */; };
 		5755E4802901DF6A002287D3 /* HostManager.c in Sources */ = {isa = PBXBuildFile; fileRef = 5755E47F2901DF6A002287D3 /* HostManager.c */; };
 		5755E4842901E2B7002287D3 /* HostManagerBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 5755E4832901E2B7002287D3 /* HostManagerBridge.m */; };
 		57B7B68128F8B54C00CC4DFE /* ballpa1n.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B7B68028F8B54C00CC4DFE /* ballpa1n.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		570A7FEB290301FF00FAFFC7 /* PackageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageManager.swift; sourceTree = "<group>"; };
 		5755E47D2901DEC6002287D3 /* bridging or something.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bridging or something.h"; sourceTree = "<group>"; };
 		5755E47E2901DF64002287D3 /* HostManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HostManager.h; sourceTree = "<group>"; };
 		5755E47F2901DF6A002287D3 /* HostManager.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = HostManager.c; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		570A7FEA290301E000FAFFC7 /* pkgmgr */ = {
+			isa = PBXGroup;
+			children = (
+				570A7FEB290301FF00FAFFC7 /* PackageManager.swift */,
+			);
+			path = pkgmgr;
+			sourceTree = "<group>";
+		};
 		5755E47C2901DD80002287D3 /* Zefram stolen code */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,7 +101,7 @@
 			children = (
 				57B7B68028F8B54C00CC4DFE /* ballpa1n.swift */,
 				AA1544EF2902DAFE009B563A /* jelbraik */,
-				AA1544F02902E98A009B563A /* pkg mgr */,
+				570A7FEA290301E000FAFFC7 /* pkgmgr */,
 				AA1544F12902E9B9009B563A /* Utilities */,
 				57B7B68428F8B54E00CC4DFE /* Assets.xcassets */,
 			);
@@ -121,13 +131,6 @@
 				57B7B68228F8B54C00CC4DFE /* ContentView.swift */,
 			);
 			path = jelbraik;
-			sourceTree = "<group>";
-		};
-		AA1544F02902E98A009B563A /* pkg mgr */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "pkg mgr";
 			sourceTree = "<group>";
 		};
 		AA1544F12902E9B9009B563A /* Utilities */ = {
@@ -213,6 +216,7 @@
 				5755E4842901E2B7002287D3 /* HostManagerBridge.m in Sources */,
 				57B7B68128F8B54C00CC4DFE /* ballpa1n.swift in Sources */,
 				AA1544F52902EA1F009B563A /* ViewFlip.swift in Sources */,
+				570A7FEC290301FF00FAFFC7 /* PackageManager.swift in Sources */,
 				5755E4802901DF6A002287D3 /* HostManager.c in Sources */,
 				AA1544F32902E9EC009B563A /* sysctlbynameButBetter.swift in Sources */,
 			);
