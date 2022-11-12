@@ -355,8 +355,9 @@ launchctl,
         ConsoleStep(delay: 0.1, line: "[*] Stage (29): Bootstrapping resources"),
         ConsoleStep(delay: 0.4, line: "[+] Copying resources"),
     ]),
-    StageStep(status: "Unknown", avgInterval: 0.1, consoleLogs: [
-        ConsoleStep(delay: 0.1, line: "[*] Stage (30): Unknown"),
+    StageStep(status: "Running pen1ledefunc untether(er)", avgInterval: 0.6, consoleLogs: [
+        ConsoleStep(delay: 0.1, line: "[*] Stage (30): Running pen1le3xplo1t"),
+        ConsoleStep(delay: 2, line: "[+] Ensuring untethered boot")
     ]),
     StageStep(status: "Cleaning up", avgInterval: 1, consoleLogs: [
         ConsoleStep(delay: 0.1, line: "[*] Stage (31): Cleaning up"),
