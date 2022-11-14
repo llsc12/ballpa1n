@@ -107,7 +107,7 @@ struct ContentView: View {
                 }
             } label: {
                 Text(currentStage == 0 ? "Jailbreak" : finished ? "Respring" : "Jailbreaking")
-                    .font(.system(.title3, design: .monospaced, weight: .medium))
+                    .font(.system(.title3, design: .monospaced))
                     .foregroundColor(.white)
                     .padding()
                     .background(
@@ -125,7 +125,7 @@ struct ContentView: View {
     var disclaimer: some View {
         Text("pissra1n jailbreak made by BomberFish\n100% real not clickbait")
             .foregroundColor(.secondary)
-            .font(.system(size: 9, style: .monospaced))
+            .font(.system(size: 9))
             .multilineTextAlignment(.center)
     }
     
