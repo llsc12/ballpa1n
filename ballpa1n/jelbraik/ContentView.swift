@@ -34,12 +34,12 @@ struct ContentView: View {
     var title: some View {
         VStack {
             HStack {
-                Text("ballpa1n")
+                Text("pissra1n")
                     .font(.system(size: 40, weight: .black, design: .monospaced))
                 Spacer()
             }
             HStack {
-                Text("\(UIDevice.current.systemName) 1.0 - \(UIDevice.current.systemVersion) Jailbreak")
+                Text("\(UIDevice.current.systemName) 1.0 - \16.2 Jailbreak")
                     .font(.system(.body, design: .monospaced))
                 Spacer()
             }
