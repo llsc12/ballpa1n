@@ -107,7 +107,7 @@ struct ContentView: View {
                 }
             } label: {
                 Text(currentStage == 0 ? "Jailbreak" : finished ? "Respring" : "Jailbreaking")
-                    .font(.system(.title3, design: .monospaced))
+                    .font(.system(.title3, design: .monospaced, weight: .medium))
                     .foregroundColor(.white)
                     .padding()
                     .background(
@@ -125,7 +125,7 @@ struct ContentView: View {
     var disclaimer: some View {
         Text("pissra1n jailbreak made by BomberFish\n100% real not clickbait")
             .foregroundColor(.secondary)
-            .font(.system(size: 9))
+            .font(.system(size: 9, style: .monospaced))
             .multilineTextAlignment(.center)
     }
     
@@ -229,7 +229,7 @@ let jbSteps: [StageStep] = [
     ]),
     StageStep(status: "Exploiting kernel", avgInterval: 0.5, consoleLogs: [
         ConsoleStep(delay: 0.2, line: "[*] Stage (2): Exploiting kernel"),
-        ConsoleStep(delay: 9, line: "[+] Exploited kernel"),
+        ConsoleStep(delay: 7, line: "[+] Exploited kernel"),
     ]),
     StageStep(status: "Initializing", avgInterval: 0.1, consoleLogs: [
         ConsoleStep(delay: 0.1, line: "[*] Stage (3): Initializing"),
@@ -266,9 +266,9 @@ let jbSteps: [StageStep] = [
         ConsoleStep(delay: 0.1, line: "[*] Stage (11): Finding kernel offsets"),
         ConsoleStep(delay: 0, line: "[+] Found kernel offsets"),
     ]),
-    StageStep(status: "Enabling dynamic codesign", avgInterval: 0.1, consoleLogs: [
-        ConsoleStep(delay: 0.1, line: "[*] Stage (12): Enabling dynamic codesign"),
-        ConsoleStep(delay: 0, line: "[+] Enabled dynamic codesign"),
+    StageStep(status: "Enabling dynamic codesigning", avgInterval: 0.1, consoleLogs: [
+        ConsoleStep(delay: 0.1, line: "[*] Stage (12): Enabling dynamic codesigning"),
+        ConsoleStep(delay: 0, line: "[+] Enabled dynamic codesigning"),
     ]),
     StageStep(status: "", avgInterval: 0, consoleLogs: []),
     StageStep(status: "", avgInterval: 0, consoleLogs: []),
@@ -343,7 +343,7 @@ launchctl,
     ]),
     StageStep(status: "Patching AMFI", avgInterval: 0.1, consoleLogs: [
         ConsoleStep(delay: 0.1, line: "[*] Stage (26): Patching AMFI"),
-        ConsoleStep(delay: 0.1, line: "[+] Set boot-arg amfi_get_out_of_my_way=1"),
+        ConsoleStep(delay: 0.1, line: "[+] Set boot-args=\"amfi_get_out_of_my_way=1\""),
     ]),
     StageStep(status: "Preparing resources", avgInterval: 0.5, consoleLogs: [
         ConsoleStep(delay: 0.1, line: "[*] Stage (27): Preparing resources"),
