@@ -361,7 +361,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.llsc12.ballpa1n;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.bomberfish.pissra1n;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "ballpa1n/Utilities/Zefram stolen code/bridging or something.h";
@@ -392,7 +392,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.llsc12.ballpa1n;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.bomberfish.pissra1n;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "ballpa1n/Utilities/Zefram stolen code/bridging or something.h";

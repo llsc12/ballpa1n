@@ -1,4 +1,4 @@
-# ballpa1n
+# pissra1n
 totally real jb for iPhone OS 1 - iOS 16.x
 
 [discord invite](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
