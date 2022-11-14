@@ -35,7 +35,7 @@ struct ContentView: View {
         VStack {
             HStack {
                 Text("pissra1n")
-                    .font(.system(size: 40, weight: .black, design: .monospaced))
+                    .font(.system(size: 50, weight: .black, design: .monospaced))
                 Spacer()
             }
             HStack {
@@ -123,7 +123,7 @@ struct ContentView: View {
     
     @ViewBuilder
     var disclaimer: some View {
-        Text("Made by llsc12\nThis is a fake jailbreak, it's made for fun and because I was bored.\nTY capt inc for device info code")
+        Text("pissra1n jailbreak made by BomberFish\n100% real not clickbait")
             .foregroundColor(.secondary)
             .font(.system(size: 9))
             .multilineTextAlignment(.center)
@@ -341,8 +341,9 @@ launchctl,
         ConsoleStep(delay: 1.5, line: "[+] File checksums verified"),
         ConsoleStep(delay: 0, line: "[*] No errors in verifying checksums"),
     ]),
-    StageStep(status: "Unknown", avgInterval: 0.1, consoleLogs: [
-        ConsoleStep(delay: 0.1, line: "[*] Stage (26): Unknown"),
+    StageStep(status: "Patching AMFI", avgInterval: 0.1, consoleLogs: [
+        ConsoleStep(delay: 0.1, line: "[*] Stage (26): Patching AMFI"),
+        ConsoleStep(delay: 0.1, line: "[+] Set boot-arg amfi_get_out_of_my_way=1"),
     ]),
     StageStep(status: "Preparing resources", avgInterval: 0.5, consoleLogs: [
         ConsoleStep(delay: 0.1, line: "[*] Stage (27): Preparing resources"),
@@ -355,16 +356,15 @@ launchctl,
         ConsoleStep(delay: 0.1, line: "[*] Stage (29): Bootstrapping resources"),
         ConsoleStep(delay: 0.4, line: "[+] Copying resources"),
     ]),
-    StageStep(status: "Unknown", avgInterval: 0.1, consoleLogs: [
-        ConsoleStep(delay: 0.1, line: "[*] Stage (30): Unknown"),
+    StageStep(status: "Installing Sileo", avgInterval: 0.1, consoleLogs: [
+        ConsoleStep(delay: 0.1, line: "[*] Stage (30): Installing Sileo"),
+        ConsoleStep(delay: 0.6, line: "[+] Copied Sileo.app to /Applications"),
     ]),
     StageStep(status: "Cleaning up", avgInterval: 1, consoleLogs: [
         ConsoleStep(delay: 0.1, line: "[*] Stage (31): Cleaning up"),
         ConsoleStep(delay: 0.2, line: "[+] Removing temporary files"),
     ]),
 ]
-
-#warning("Unknown on 26")
 
 #warning("Unknown on 28")
 
