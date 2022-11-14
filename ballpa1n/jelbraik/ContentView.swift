@@ -39,7 +39,7 @@ struct ContentView: View {
                 Spacer()
             }
             HStack {
-                Text("\(UIDevice.current.systemName) 1.0 - \16.2 Jailbreak")
+                Text("\(UIDevice.current.systemName) 1.0 - 16.2 Jailbreak")
                     .font(.system(.body, design: .monospaced))
                 Spacer()
             }
