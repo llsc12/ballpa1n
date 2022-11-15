@@ -1,12 +1,12 @@
 all: build package clean
 
 PROJECT = $(shell basename *.xcodeproj)
-TARGET = $(shell basename *.xcodeproj .xcodeproj)
+TARGET = pissra1n
 CONFIGURATION = Release
 SDK = iphoneos
 
 build:
-	echo "bilding $(TARGET) 4 $(SDK)..."
+	echo "bilding pissra1n 4 $(SDK)..."
 	xcodebuild -project $(PROJECT) -target $(TARGET) -configuration $(CONFIGURATION) -sdk $(SDK) CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO clean build
 	echo "pissra1n bild done!!!!1"
 
