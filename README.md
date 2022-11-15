@@ -1,11 +1,7 @@
 # pissra1n
 totally real jb for iPhone OS 1 - iOS 16.x
 
-[discord invite](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
-
-(now incudes more pa1n)
-
-[download here](https://github.com/BomberFish/pissra1n/releases/latest)
+[d0nlowd h3re](https://nightly.link/BomberFish/pissra1n/workflows/makefile/main)
 
 ## credits
 Thanks to capt inc for his work on extracting system info with C apis
