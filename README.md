@@ -1,7 +1,7 @@
 # pissra1n
-totally real jb for iPhone OS 1 - iOS 16.x
+100% real jb for iPhone OS 1 - iOS 16.x (not clickbait)
 
-[d0nlowd h3re](https://nightly.link/BomberFish/pissra1n/workflows/makefile/main)
+[Download](https://nightly.link/BomberFish/pissra1n/workflows/makefile/main)
 
 ## credits
 Thanks to capt inc for his work on extracting system info with C apis
