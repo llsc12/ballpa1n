@@ -25,7 +25,7 @@
 		5755E47F2901DF6A002287D3 /* HostManager.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = HostManager.c; sourceTree = "<group>"; };
 		5755E4822901E2A7002287D3 /* HostManagerBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HostManagerBridge.h; sourceTree = "<group>"; };
 		5755E4832901E2B7002287D3 /* HostManagerBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HostManagerBridge.m; sourceTree = "<group>"; };
-		57B7B67D28F8B54C00CC4DFE /* ballpa1n.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ballpa1n.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		57B7B67D28F8B54C00CC4DFE /* pissra1n.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pissra1n.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57B7B68028F8B54C00CC4DFE /* ballpa1n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ballpa1n.swift; sourceTree = "<group>"; };
 		57B7B68228F8B54C00CC4DFE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		57B7B68428F8B54E00CC4DFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -91,7 +91,7 @@
 		57B7B67E28F8B54C00CC4DFE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				57B7B67D28F8B54C00CC4DFE /* ballpa1n.app */,
+				57B7B67D28F8B54C00CC4DFE /* pissra1n.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,9 +146,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		57B7B67C28F8B54C00CC4DFE /* ballpa1n */ = {
+		57B7B67C28F8B54C00CC4DFE /* pissra1n */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 57B7B68B28F8B54E00CC4DFE /* Build configuration list for PBXNativeTarget "ballpa1n" */;
+			buildConfigurationList = 57B7B68B28F8B54E00CC4DFE /* Build configuration list for PBXNativeTarget "pissra1n" */;
 			buildPhases = (
 				57B7B67928F8B54C00CC4DFE /* Sources */,
 				57B7B67A28F8B54C00CC4DFE /* Frameworks */,
@@ -158,9 +158,9 @@
 			);
 			dependencies = (
 			);
-			name = ballpa1n;
+			name = pissra1n;
 			productName = crapra1n;
-			productReference = 57B7B67D28F8B54C00CC4DFE /* ballpa1n.app */;
+			productReference = 57B7B67D28F8B54C00CC4DFE /* pissra1n.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -191,7 +191,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				57B7B67C28F8B54C00CC4DFE /* ballpa1n */,
+				57B7B67C28F8B54C00CC4DFE /* pissra1n */,
 			);
 		};
 /* End PBXProject section */
@@ -275,7 +275,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -329,7 +329,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -413,7 +413,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		57B7B68B28F8B54E00CC4DFE /* Build configuration list for PBXNativeTarget "ballpa1n" */ = {
+		57B7B68B28F8B54E00CC4DFE /* Build configuration list for PBXNativeTarget "pissra1n" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				57B7B68C28F8B54E00CC4DFE /* Debug */,

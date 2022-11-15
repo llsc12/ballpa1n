@@ -16,5 +16,11 @@ jobs:
       run: make
     - uses: actions/upload-artifact@v3
       with:
-       name: iPA
-       path: ballpa1n.ipa
+       name: IPA
+       path: pissra1n.ipa
+    - name: make tipa
+      run: make && mv pissra1n.ipa pissra1n.tipa
+    - uses: actions/upload-artifact@v3
+      with:
+       name: TIPA
+       path: pissra1n.tipa
