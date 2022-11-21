@@ -19,9 +19,13 @@ struct ballpa1nApp: App {
                 .preferredColorScheme(triggerRespring ? .dark : .none)
                 .scaleEffect(triggerRespring ? 0.95 : 1)
                 .brightness(triggerRespring ? -1 : 0)
-                .statusBarHidden(triggerRespring)
+                #if os(iOS) || os(iPadOS) || os(tvOS) || os(watchOS)
+                    .statusBarHidden(triggerRespring)
+                #endif
                 .onChange(of: triggerRespring) { _ in
                     if triggerRespring == true {
+                    #if os(iOS)
+                        
                         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { timer in
                             
                             // TY amy for respring bug
@@ -31,6 +35,7 @@ struct ballpa1nApp: App {
                             }
                             
                         }
+                    #endif
                     }
                 }
         }

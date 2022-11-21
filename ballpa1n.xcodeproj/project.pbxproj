@@ -16,7 +16,6 @@
 		AA1544EB2901EACA009B563A /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA1544EA2901EAC9009B563A /* IOKit.framework */; };
 		AA1544F32902E9EC009B563A /* sysctlbynameButBetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1544F22902E9EC009B563A /* sysctlbynameButBetter.swift */; };
 		AA1544F52902EA1F009B563A /* ViewFlip.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1544F42902EA1F009B563A /* ViewFlip.swift */; };
-		D66B97BF292BBE5A005AF85C /* VisualEffectBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66B97BE292BBE5A005AF85C /* VisualEffectBlur.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +35,7 @@
 		AA1544EC2901EDDB009B563A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AA1544F22902E9EC009B563A /* sysctlbynameButBetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sysctlbynameButBetter.swift; sourceTree = "<group>"; };
 		AA1544F42902EA1F009B563A /* ViewFlip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFlip.swift; sourceTree = "<group>"; };
-		D66B97BE292BBE5A005AF85C /* VisualEffectBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectBlur.swift; sourceTree = "<group>"; };
+		D6CB007D292BD30500FE9911 /* pissra1n.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = pissra1n.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +83,7 @@
 		57B7B67428F8B54C00CC4DFE = {
 			isa = PBXGroup;
 			children = (
+				D6CB007D292BD30500FE9911 /* pissra1n.entitlements */,
 				57B7B67F28F8B54C00CC4DFE /* ballpa1n */,
 				57B7B67E28F8B54C00CC4DFE /* Products */,
 				AA1544E92901EAC9009B563A /* Frameworks */,
@@ -131,7 +131,6 @@
 			isa = PBXGroup;
 			children = (
 				57B7B68228F8B54C00CC4DFE /* ContentView.swift */,
-				D66B97BE292BBE5A005AF85C /* VisualEffectBlur.swift */,
 			);
 			path = jelbraik;
 			sourceTree = "<group>";
@@ -222,7 +221,6 @@
 				570A7FEC290301FF00FAFFC7 /* PackageManager.swift in Sources */,
 				5755E4802901DF6A002287D3 /* HostManager.c in Sources */,
 				AA1544F32902E9EC009B563A /* sysctlbynameButBetter.swift in Sources */,
-				D66B97BF292BBE5A005AF85C /* VisualEffectBlur.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +346,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = pissra1n.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
@@ -364,13 +363,18 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ca.bomberfish.pissra1n;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "ballpa1n/Utilities/Zefram stolen code/bridging or something.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,3";
+				TVOS_DEPLOYMENT_TARGET = 15.0;
 			};
 			name = Debug;
 		};
@@ -379,6 +383,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = pissra1n.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
@@ -395,13 +400,18 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ca.bomberfish.pissra1n;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "ballpa1n/Utilities/Zefram stolen code/bridging or something.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,3";
+				TVOS_DEPLOYMENT_TARGET = 15.0;
 			};
 			name = Release;
 		};

@@ -1,4 +1,4 @@
-# bild directory
+# build stuff
 build
-# bilded ipas
 *.ipa
+*.tipa
