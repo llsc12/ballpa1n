@@ -6,9 +6,9 @@ CONFIGURATION = Release
 SDK = iphoneos
 
 build:
-	echo "bilding pissra1n 4 $(SDK)..."
+	echo "building pissra1n for SDL $(SDK)..."
 	xcodebuild -project $(PROJECT) -target $(TARGET) -configuration $(CONFIGURATION) -sdk $(SDK) CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO clean build
-	echo "pissra1n bild done!!!!1"
+	echo "pissra1n build finished!"
 
 package:
 	rm -rf Payload
