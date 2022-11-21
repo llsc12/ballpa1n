@@ -65,18 +65,18 @@ struct ContentView: View {
         ZStack {
                     ForEach (1...50, id:\.self) { _ in
                         Circle ()
-                            .foregroundColor(Color (red: .random(in: 0.975...1),
-                                                    green: .random(in: 0.9...1),
-                                                    blue: .random(in: 0...0.1))).opacity(.random(in: 0.4...0.6))
+                            .foregroundColor(Color (red: .random(in: 0.98...1),
+                                                    green: .random(in: 0.9...0.98),
+                                                    blue: .random(in: 0...0.05))).opacity(.random(in: 0.4...0.6)).blur(radius: .random(in: 0...3))
                         
                             .blendMode(.colorDodge) // The bottom circle is lightened by an amount determined by the top layer
-                            .animation (Animation.spring (dampingFraction: 1)
+                            .animation (Animation.spring (dampingFraction: 1.5)
                                             .repeatForever()
-                                            .speed (.random(in: 0.69...1))
+                                            .speed (.random(in: 0.1...0.5))
                                             .delay(.random (in: 0...1)), value: scale
                             )
                         
-                            .scaleEffect(self.scale * .random(in: 0.1...2.5))
+                            .scaleEffect(self.scale * .random(in: 0.05...2.5))
                             .frame(width: .random(in: 1...100),
                                    height: CGFloat.random (in:20...100),
                                    alignment: .center)
@@ -136,7 +136,7 @@ struct ContentView: View {
         .background(
             ZStack {
                 RoundedRectangle(cornerRadius: 20, style: .continuous)
-                    .foregroundColor(Color(red: 0.25, green: 0.25, blue: 0.25)).opacity(0.95)
+                    .foregroundColor(Color(red: 0.1025, green: 0.1025, blue: 0.1)).opacity(0.975)
                 //VisualEffectBlur(blurStyle: .systemMaterial)
                         //.ignoresSafeArea()
             }
@@ -180,9 +180,9 @@ struct ContentView: View {
     
     @ViewBuilder
     var disclaimer: some View {
-        Text("pissra1n jailbreak made by BomberFish\n100% real not clickbait")
+        Text("pissra1n jailbreak made by BomberFish\n100% real (no clickbait)")
             .foregroundColor(mg)
-            .font(.system(size: 9))
+            .font(.system(size: 10))
             .multilineTextAlignment(.center)
     }
     
