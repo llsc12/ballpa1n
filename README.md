@@ -3,7 +3,7 @@
 
 [Download](https://nightly.link/BomberFish/pissra1n/workflows/makefile/main)
 
-[Screenshot](screenshot.jpeg)
+<img src="./screenshot.jpeg">
 
 ## credits
 Thanks to capt inc for his work on extracting system info with C apis
