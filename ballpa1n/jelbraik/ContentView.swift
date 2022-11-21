@@ -72,7 +72,7 @@ struct ContentView: View {
                             .blendMode(.colorDodge) // The bottom circle is lightened by an amount determined by the top layer
                             .animation (Animation.spring (dampingFraction: 1)
                                             .repeatForever()
-                                            .speed (.random(in: 0.25...0.4))
+                                            .speed (.random(in: 0.69...1))
                                             .delay(.random (in: 0...1)), value: scale
                             )
                         
@@ -134,15 +134,24 @@ struct ContentView: View {
         }
         .frame(height: currentStage != 0 ? deviceHeight / 4 : 0)
         .background(
-            RoundedRectangle(cornerRadius: 15, style: .continuous)
-                .foregroundColor(Color("ConsoleBG"))
+            ZStack {
+                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                    .foregroundColor(Color(red: 0.25, green: 0.25, blue: 0.25)).opacity(0.95)
+                //VisualEffectBlur(blurStyle: .systemMaterial)
+                        //.ignoresSafeArea()
+            }
         )
         .opacity(currentStage != 0 ? 1 : 0)
         .padding(.horizontal)
         .flipped()
     }
     
-    @ViewBuilder func Line(_ str: String) -> some View { HStack { Text(str).font(.system(.caption2, design: .monospaced)); Spacer() } }
+    @ViewBuilder func Line(_ str: String) -> some View {
+        HStack {
+            Text(str).font(.system(.caption2, design: .monospaced)).foregroundColor(.white);
+            Spacer()
+        }
+    }
     
     @ViewBuilder
     var controls: some View {
