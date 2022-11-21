@@ -18,6 +18,10 @@ struct ContentView: View {
     
     @ObservedObject var c = Console.shared
     
+    let fg = Color(red: 1, green: 1, blue: 1)
+    let bg = Color(red: 0, green: 0, blue: 0)
+    let mg = Color(red: 0.6, green: 0.6, blue: 0.6)
+    
     var body: some View {
         ZStack {
             bubbles
@@ -33,6 +37,7 @@ struct ContentView: View {
                 disclaimer
             }
         }
+        .preferredColorScheme(.dark)
     }
     
     @ViewBuilder
@@ -41,11 +46,13 @@ struct ContentView: View {
             HStack {
                 Text("pissra1n")
                     .font(.system(size: 50, weight: .black, design: .monospaced))
+                    .foregroundColor(fg)
                 Spacer()
             }
             HStack {
                 Text("\(UIDevice.current.systemName) 1.0 - 16.2 Jailbreak")
                     .font(.system(.body, design: .monospaced))
+                    .foregroundColor(fg)
                 Spacer()
             }
         }
@@ -58,18 +65,18 @@ struct ContentView: View {
         ZStack {
                     ForEach (1...50, id:\.self) { _ in
                         Circle ()
-                            .foregroundColor(Color (red: .random(in: 0.7...1),
-                                                    green: .random(in: 0.7...1),
-                                                    blue: .random(in: 0...0.1)))
+                            .foregroundColor(Color (red: .random(in: 0.975...1),
+                                                    green: .random(in: 0.9...1),
+                                                    blue: .random(in: 0...0.1))).opacity(.random(in: 0.4...0.6))
                         
                             .blendMode(.colorDodge) // The bottom circle is lightened by an amount determined by the top layer
-                            .animation (Animation.spring (dampingFraction: 0.5)
+                            .animation (Animation.spring (dampingFraction: 1)
                                             .repeatForever()
-                                            .speed (.random(in: 0.05...0.4))
+                                            .speed (.random(in: 0.25...0.4))
                                             .delay(.random (in: 0...1)), value: scale
                             )
                         
-                            .scaleEffect(self.scale * .random(in: 0.1...3))
+                            .scaleEffect(self.scale * .random(in: 0.1...2.5))
                             .frame(width: .random(in: 1...100),
                                    height: CGFloat.random (in:20...100),
                                    alignment: .center)
@@ -78,8 +85,13 @@ struct ContentView: View {
                     }
                 }
                 .onAppear {
-                    self.scale = 1.2 // default circle scale
+                    self.scale = 0.9 // default circle scale
                 }
+                .drawingGroup(opaque: false, colorMode: .linear)
+                        .background(
+                            Rectangle()
+                                .foregroundColor(bg))
+                        .ignoresSafeArea()
     }
     
     @ViewBuilder
@@ -91,6 +103,7 @@ struct ContentView: View {
             HStack {
                 Text("Status\n(\(finished ? max : stage)/\(max)) \(finished ? "Finished." : jbSteps[stage].status)")
                     .font(.system(.callout, design: .monospaced))
+                    .foregroundColor(fg)
                 Spacer()
             }
             
@@ -98,6 +111,7 @@ struct ContentView: View {
                 .frame(height: currentStage != 0 ? 4 : 0)
                 .opacity(currentStage != 0 ? 1 : 0)
                 .animation(.spring(), value: currentStage)
+                .tint(.yellow)
         }
         .padding(.vertical, 4)
         .padding(.horizontal)
@@ -146,7 +160,7 @@ struct ContentView: View {
                     .padding()
                     .background(
                         Capsule()
-                            .foregroundColor(.blue)
+                            .foregroundColor(.yellow)
                     )
             }
             .buttonStyle(.plain)
@@ -158,7 +172,7 @@ struct ContentView: View {
     @ViewBuilder
     var disclaimer: some View {
         Text("pissra1n jailbreak made by BomberFish\n100% real not clickbait")
-            .foregroundColor(.secondary)
+            .foregroundColor(mg)
             .font(.system(size: 9))
             .multilineTextAlignment(.center)
     }
